@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>helloAjax</title>
+    <script>
+        window.onload = function () {
+            var optn = document.getElementById("btn");
+            // optn.onclick = getData();//如果方法后面加括号表示方法的一次执行而不是方法额一次绑定
+            optn.onclick = getData;
+        };
+
+        function getData() {
+            // alert("xxx");
+            // 1、创建xmlhttpRequest对象
+            // var xhr = new XMLHttpRequest();
+            var xhr = createXMLHttpRequest();
+            // 2、检验xmlhttpRequest状态
+            xhr.open("GET", "/helloAjaxServlet", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("div1").innerHTML = xhr.responseText;
+                }
+            };
+            //3、发送请求
+            xhr.send();
+        }
+
+        function createXMLHttpRequest() {
+            if (window.XMLHttpRequest) {
+                return new XMLHttpRequest();
+            }
+            else if (window.ActiveXObject) {
+                //针对IE5和6
+                return new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            else {
+                alert("您使用的浏览器不支持XMLHTTPRequest,请换一个浏览器再试");
+                return null;
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+<h1>Hello Ajax Html</h1>
+<input type="button" id="btn" value="提交">
+<div id="div1">原始的div1标签</div>
+</body>
+</html>
