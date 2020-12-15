@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>jquery 05</title>
+    <script src="../js/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#div2").click(function () {
+                $("#div2,.div1").css("background", "red");
+            })
+        });
+    </script>
+</head>
+<body>
+<div class="div1">111</div>
+<div id="div2">12313</div>
+<div class="div1">2</div>
+<div class="div1">3</div>
+<div class="div1">44</div>
+<div class="div1">5</div>
+</body>
+</html>

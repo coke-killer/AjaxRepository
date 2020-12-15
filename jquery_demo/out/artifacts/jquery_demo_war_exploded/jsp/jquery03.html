@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jquery02</title>
+    <script src="../js/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#div1").click(function () {
+                $("#div2").css("background", "red");
+            })
+        })
+    </script>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">123啊</div>
+<div id="div2">2</div>
+<div id="div3">3</div>
+<div id="div4">4</div>
+<div id="div5">5</div>
+</body>
+</html>
