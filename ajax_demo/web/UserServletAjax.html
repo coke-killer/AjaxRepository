@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>userXml html</title>
+    <script>
+        window.onload = function () {
+            document.getElementById("sel").onchange = getData;
+        };
+
+        function getData() {
+            var mapKey = this.value;
+            //1\获取xhr对象
+            var xhr = new XMLHttpRequest();
+            //2、打开页面，获取返回值
+            xhr.open("GET", "userServlet?mapKey=" + mapKey, true);
+            //检测xhr状态
+            xhr.onreadystatechange = function () {
+                //处理请求
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // document.getElementById("div1").innerHTML = xhr.responseText;
+                    //1、获取从servlet传递过来的xml对象
+                    var xmlDoc = xhr.responseXML;
+                    alert(xmlDoc)
+                    //2、获取所有的user节点
+                    var userList = xmlDoc.getElementsByTagName("user");
+                    var node = "";
+                    for (var i = 0; i < userList.length; i++) {
+                        node += getValueByProp(userList[i], "id") + "---" + getValueByProp(userList[i], "name") + "---" + getValueByProp(userList[i], "password");
+                    }
+                    //3、写入到users中
+                    document.getElementById("div1").innerHTML = node;
+                }
+            };
+            xhr.send();
+        }
+
+        //根据节点获取值
+        function getValueByProp(node, prop) {
+            return (node.getElementsByTagName(prop))[0].firstChild.nodeName;
+        }
+    </script>
+</head>
+<body>
+<select name="sel" id="sel">
+    <option value="1">第一小组</option>
+    <option value="2">第二小组</option>
+    <option value="3">第三小组</option>
+</select>
+<div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>userJson</title>
+    <script>
+        window.onload = function () {
+            var oSel = document.getElementById("sel");
+            oSel.onchange = getData;
+        };
+
+        function getData() {
+            var mapKey = this.value;
+            var xhr = createXMLHttpRequest();
+            xhr.open("GET", "userServlet?mapKey=" + mapKey, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("div1").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+
+        function createXMLHttpRequest() {
+            if (window.XMLHttpRequest) {
+                return new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                return new ActiveXObject("Microsoft.XMLHTTP");
+            } else {
+                return null;
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>userJson</h1>
+<select name="sel" id="sel">
+    <option value="1">第一组</option>
+    <option value="2">第二组</option>
+    <option value="3">第三组</option>
+</select>
+<div id="div1"></div>
+</body>
+</html>
