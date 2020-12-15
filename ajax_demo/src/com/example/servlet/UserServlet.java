@@ -56,7 +56,6 @@ public class UserServlet extends HttpServlet {
             stringBuffer.append("<name>").append(user.getName()).append("</name>");
             stringBuffer.append("<password>").append(user.getPassword()).append("</password>");
             stringBuffer.append("</user>");
-
         }
         stringBuffer.append("<users>");
         System.out.println(stringBuffer.toString());
