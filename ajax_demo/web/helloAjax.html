@@ -25,20 +25,16 @@
             //3、发送请求
             xhr.send();
         }
-
         function createXMLHttpRequest() {
             if (window.XMLHttpRequest) {
                 return new XMLHttpRequest();
-            }
-            else if (window.ActiveXObject) {
+            } else if (window.ActiveXObject) {
                 //针对IE5和6
                 return new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            else {
+            } else {
                 alert("您使用的浏览器不支持XMLHTTPRequest,请换一个浏览器再试");
                 return null;
             }
-
         }
     </script>
 </head>
