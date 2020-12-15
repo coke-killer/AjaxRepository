@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@WebServlet(urlPatterns = "/UserServlet", name = "UserServlet")
+@WebServlet(urlPatterns = "/userServlet", name = "userServlet")
 public class UserServlet extends HttpServlet {
     Map<Integer, List<User>> map = new HashMap<>();
 
@@ -40,8 +40,8 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("userServlet start");
-        //由于返回的是xml ,需要为response设置concentType
-        resp.setContentType("text/html;charset=utf-8");
+        //由于返回的是xml ,需要为response设置contentType
+//        resp.setContentType("text/xml");
         //从页面获取mapKey的值
         int mapKey = Integer.parseInt(req.getParameter("mapKey"));
         //根据key获取对应的value
