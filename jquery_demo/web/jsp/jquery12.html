@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jquery 12</title>
+    <script src="../js/jquery.js"></script>
+    <script>
+        $(function () {
+            //获取table元素的个数
+            // alert($("table").size());
+            // alert($("table").length);
+            //获取tr元素的个数，通过get(index) 获取下标的元素js对象,想变成jquery对象需在外层加入$()
+            // alert($("tr").size());
+            $($("tr").get(1)).css("background", "red");
+            //找到id为id1的tr在包装集中的位置
+            alert($("tr").index($("tr#id1")));
+        });
+    </script>
+</head>
+<body>
+<div id="div1">
+    div一级内容
+    <div>
+        div二级内容
+        <span id="span1">abc</span>
+    </div>
+</div>
+<table id="table1" width="700" align="center" border="1">
+    <thead>
+    <tr>
+        <td>用户标识</td>
+        <td>用户姓名</td>
+        <td>用户年龄</td>
+        <td>用户密码</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr id="id1">
+        <td>1</td>
+        <td>张三1</td>
+        <td>21</td>
+        <td>abc1</td>
+    </tr>
+    <tr id="id2">
+        <td>2</td>
+        <td>张三2</td>
+        <td>22</td>
+        <td>abc2</td>
+    </tr>
+    <tr id="id3">
+        <td>3</td>
+        <td>张三3</td>
+        <td>23</td>
+        <td>abc3</td>
+    </tr>
+    <tr id="id4">
+        <td>4</td>
+        <td>张三4</td>
+        <td>23</td>
+        <td>abc4</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
