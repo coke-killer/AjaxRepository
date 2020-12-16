@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jquery 10 可见性过滤选择器</title>
+    <script src="../js/jquery.js"></script>
+    <script>
+        $(function () {
+            var oLhs = $("li:hidden");
+            alert(oLhs.length);
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>111111111111111</li>
+    <li type="hidden" style="display: none">222222222222222</li>
+    <li type="hidden">333333333333333</li>
+    <li>444444444444444</li>
+    <li>555555555555555</li>
+</ul>
+</body>
+</html>

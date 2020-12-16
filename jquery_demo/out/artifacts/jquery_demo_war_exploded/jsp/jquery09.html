@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jquery 09</title>
+    <script src="../js/jquery.js"></script>
+    <script>
+        $(function () {
+            $("div:contains('小王')").css("color", "red");
+            $("div:empty").html("xxxxx");
+            $("div:has(p)").html("小张");
+            //含有子元素或者文本元素
+            $("div:parent").html("aaaaaaaaaaaaaaaaa");
+            // $("div[id^='xx']").css("color", "green");
+            $("div[id$='xx']").css("color", "green");
+            $("input[id][name]").css("color", "blue");
+        });
+    </script>
+</head>
+<body>
+<div>
+    <p></p>
+</div>
+<div id="xxx">1</div>
+<input type="submit" id="a" name="b">
+<div id="xx">2</div>
+<div>小王</div>
+<div>小鱼</div>
+<div style="border:1px solid salmon"></div>
+</body>
+</html>
