@@ -12,7 +12,8 @@
             $("div:has(p)").html("小张");
             //含有子元素或者文本元素
             $("div:parent").html("aaaaaaaaaaaaaaaaa");
-            $("div[id^='xx']").css("color", "green");
+            // $("div[id^='xx']").css("color", "green");
+            $("div[id$='xx']").css("color", "green");
         });
     </script>
 </head>
