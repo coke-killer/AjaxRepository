@@ -8,11 +8,13 @@
     <script>
         $(function () {
             $("div:contains('小王')").css("color", "red");
-        })
+            $("div:empty").html("xxxxx");
+        });
     </script>
 </head>
 <body>
 <div>小王</div>
 <div>小鱼</div>
+<div style="border:1px solid salmon"></div>
 </body>
 </html>
