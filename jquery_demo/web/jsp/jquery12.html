@@ -12,9 +12,18 @@
             // alert($("table").length);
             //获取tr元素的个数，通过get(index) 获取下标的元素js对象,想变成jquery对象需在外层加入$()
             // alert($("tr").size());
-            $($("tr").get(1)).css("background", "red");
+            // $($("tr").get(1)).css("background", "red");
             //找到id为id1的tr在包装集中的位置
-            alert($("tr").index($("tr#id4")));
+            // alert($("tr").index($("tr#id4")));
+            //返回新包装集并且
+            // $("tr:eq(2)").siblings("tr")
+            //     .css("background", "#afa")
+            //     .css("color", "#faf")
+            //     .end()
+            //     .css("background", "red")
+            //     .css("color", "blue")
+            //获取新的表格,克隆
+            $("#users tbody").clone().appendTo("#tus");
         });
     </script>
 </head>
@@ -26,16 +35,17 @@
         <span id="span1">abc</span>
     </div>
 </div>
-<table id="table1" width="700" align="center" border="1">
-<!--    <thead>-->
+<table id="tus" width="700" border="1" align="center"></table>
+<table id="table1" width="700" align="center" border="1" id="users">
+        <thead>
     <tr>
         <td>用户标识</td>
         <td>用户姓名</td>
         <td>用户年龄</td>
         <td>用户密码</td>
     </tr>
-<!--    </thead>-->
-<!--    <tbody>-->
+        </thead>
+        <tbody>
     <tr id="id1">
         <td>1</td>
         <td>张三1</td>
@@ -60,7 +70,7 @@
         <td>23</td>
         <td>abc4</td>
     </tr>
-<!--    </tbody>-->
+        </tbody>
 </table>
 </body>
 </html>
