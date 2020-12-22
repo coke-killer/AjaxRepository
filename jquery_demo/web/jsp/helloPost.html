@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>helloPost</title>
+    <script src="../js/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                $.post("/helloPostServlet",
+                    {
+                        name: "Donald Duck",
+                    },
+                    function (data, status) {
+                        $("#div1").html(data);
+                    });
+            })
+        })
+    </script>
+</head>
+<body>
+<h1>Hello Ajax Html</h1>
+<input type="button" id="btn" value="提交">
+<div id="div1">原始的div1标签</div>
+</body>
+</html>
