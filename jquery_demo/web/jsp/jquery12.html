@@ -14,7 +14,7 @@
             // alert($("tr").size());
             $($("tr").get(1)).css("background", "red");
             //找到id为id1的tr在包装集中的位置
-            alert($("tr").index($("tr#id1")));
+            alert($("tr").index($("tr#id4")));
         });
     </script>
 </head>
@@ -27,15 +27,15 @@
     </div>
 </div>
 <table id="table1" width="700" align="center" border="1">
-    <thead>
+<!--    <thead>-->
     <tr>
         <td>用户标识</td>
         <td>用户姓名</td>
         <td>用户年龄</td>
         <td>用户密码</td>
     </tr>
-    </thead>
-    <tbody>
+<!--    </thead>-->
+<!--    <tbody>-->
     <tr id="id1">
         <td>1</td>
         <td>张三1</td>
@@ -60,7 +60,7 @@
         <td>23</td>
         <td>abc4</td>
     </tr>
-    </tbody>
+<!--    </tbody>-->
 </table>
 </body>
 </html>
